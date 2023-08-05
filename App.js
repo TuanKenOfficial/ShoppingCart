@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View,Alert } from 'react-native';
-import test from './home/Test';
+
+
 
 export default function App() {
   return (
@@ -35,18 +36,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   body:{
-    width: '100%',
-    flex: '1',
-    backgroundColor:'gray',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 1,
+    backgroundColor:'gray'
+    
   },
   footer:{
     width:'100%',
-    height: 40,
+    height: 30,
     backgroundColor: 'green',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     text:{
       color: 'black',
       fontSize: 12
