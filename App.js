@@ -4,15 +4,19 @@ import test from './home/Test';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.bigBlue}>Open up App.js to start working on your app!</Text>
-      <Text style={styles.red}>Tuấn Ken Official</Text>
-      <Text style={styles.row}>Tuấn Ken</Text>
-      <Button style={styles.label} 
-        onPress={() => Alert.alert('Simple Button pressed')}
-        title="Click"/>
-      <StatusBar style="auto" />
+    <View style={styles.container} accessibilityLabel='App root'>
+      <View style={styles.header} accessibilityLabel='Header'>
+          <Text style={styles.textInfo}>Header</Text> 
+      </View>
+      <View style={styles.container} accessibilityLabel='Body'>
+        <Text >Nguyễn Vĩ Khang</Text>
+      </View>
+
+      <View style={styles.footer} accessibilityLabel='Footer'>
+        <Text style={styles.footer.text}>Copyright © Nguyễn Vĩ Khang</Text>
+      </View>
     </View>
+    
   );
 }
 
@@ -23,53 +27,37 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  bigBlue:{
-    // color: 'blue',
-    // frontWeight: 'bold',
-    // frontSize: 20,
-    justifyContent: 'flex-end'
-  },
-  red:{
-    width: '10',
-    height: '50',
+  header:{
+    width: '100%',
+    height: 60,
+    backgroundColor: 'red',
     alignItems: 'center',
-      flex: 0.2,
-      color: 'red'
+    justifyContent: 'center'
   },
-  box: {
-    width: 50,
-    height: 50,
+  body:{
+    width: '100%',
+    flex: '1',
+    backgroundColor:'gray',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
-  row: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+  footer:{
+    width:'100%',
+    height: 40,
+    backgroundColor: 'green',
+    alignItems: 'center',
+    justifyContent: 'center',
+    text:{
+      color: 'black',
+      fontSize: 12
+    },
+   
   },
-  button: {
-    paddingHorizontal: 8,
-    paddingVertical: 6,
-    borderRadius: 4,
-    backgroundColor: 'oldlace',
-    alignSelf: 'flex-start',
-    marginHorizontal: '1%',
-    marginBottom: 6,
-    minWidth: '48%',
-    textAlign: 'center',
+  text:{
+    color: 'black',
+    fontSize: 20
   },
-  selected: {
-    backgroundColor: 'coral',
-    borderWidth: 0,
-  },
-  buttonLabel: {
-    fontSize: 12,
-    fontWeight: '500',
-    color: 'coral',
-  },
-  selectedLabel: {
-    color: 'white',
-  },
-  label: {
-    textAlign: 'center',
-    marginBottom: 10,
-    fontSize: 24,
+  textInfo:{
+    fontWeight:'bold'
   }
 });
